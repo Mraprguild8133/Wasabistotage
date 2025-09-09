@@ -226,7 +226,7 @@ async def handle_file(client, message: Message):
             await db.save_file(file_data)
             
             # Create response with action buttons
-            domain = os.getenv('REPLIT_DEV_DOMAIN', 'localhost:5000')
+            domain = os.getenv('RENDER_EXTERNAL_HOSTNAME', 'localhost:5000')
             is_media = file_data['mime_type'] and (
                 file_data['mime_type'].startswith('video/') or 
                 file_data['mime_type'].startswith('audio/')
